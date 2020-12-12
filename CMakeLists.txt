@@ -21,9 +21,12 @@ if(NOT SDLMIXER_FOUND)
 endif(NOT SDLMIXER_FOUND)
 include_directories(${SDL_MIXER_INCLUDE_DIR})
 
+#find_package(Lua REQUIRED)
+
 include_directories(external/glm)
 include_directories(external/libnoise/include)
 include_directories(external/libnoise/examples)
+include_directories(external/lua)
 
 add_subdirectory(external)
 add_subdirectory(src)

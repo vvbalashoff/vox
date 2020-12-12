@@ -4,3 +4,4 @@ option(LIBNOISE_BUILD_SHARED_LIBS "" ${BUILD_SHARED_LIBS})
 
 add_subdirectory(glm)
 add_subdirectory(libnoise)
+#add_subdirectory(lua)
