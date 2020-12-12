@@ -2,7 +2,7 @@
 
 Vox is an open source Voxel Engine, and game, that is written in C++ and OpenGL and can be used to create easy and fast voxel based games and applications. The engine is written to be highly functional and very efficient at allowing voxel game creation and provides a simple framework for creating 3D voxel games.
 
-This is a fork of [AlwaysGeeky Vox Engine] (https://github.com/AlwaysGeeky/Vox)\
+This is a fork of [AlwaysGeeky Vox Engine] (https://github.com/AlwaysGeeky/Vox)
 Main goals of this fork are the following:
 - keep update outdated project;
 - treat libraries as external (use git submodule command where it is possible);
