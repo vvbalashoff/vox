@@ -14,7 +14,8 @@
 #include "VoxGame.h"
 //#include "SoundManager/SoundManager.h"
 #include "utils/Interpolator.h"
-#include <glm/detail/func_geometric.hpp>
+//#include <glm/detail/func_geometric.inl>
+#include <glm/common.hpp>
 
 #ifdef __linux__
 #include <sys/time.h>

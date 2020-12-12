@@ -14,7 +14,8 @@
 #include "../blocks/Chunk.h"
 #include "../VoxGame.h"
 #include "../utils/Random.h"
-#include <glm/detail/func_geometric.hpp>
+//#include <glm/detail/func_geometric.inl>
+#include <glm/common.hpp>
 
 const vec3 Player::PLAYER_CENTER_OFFSET = vec3(0.0f, 1.525f, 0.0f);
 

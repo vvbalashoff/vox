@@ -13,7 +13,7 @@
 // ******************************************************************************
 
 #include "3dGeometry.h"
-#include <glm/detail/func_geometric.hpp>
+#include <glm/detail/func_geometric.inl>
 using namespace glm;
 
 

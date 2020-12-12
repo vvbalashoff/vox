@@ -27,7 +27,7 @@ add_subdirectory(models)
 add_subdirectory(Particles)
 add_subdirectory(Renderer)
 add_subdirectory(gui)
-add_subdirectory(glm)
+#add_subdirectory(glm)
 add_subdirectory(Player)
 add_subdirectory(blocks)
 #add_subdirectory(lua)
@@ -61,10 +61,10 @@ source_group("source\\models" FILES ${MODELS_SRCS})
 source_group("source\\particles" FILES ${PARTICLES_SRCS})
 source_group("source\\renderer" FILES ${RENDERER_SRCS})
 source_group("source\\gui" FILES ${GUI_SRCS})
-source_group("source\\glm" FILES ${GLM_SRCS})
-source_group("source\\glm\\detail" FILES ${GLM_DETAIL_SRCS})
-source_group("source\\glm\\gtc" FILES ${GLM_GTC_SRCS})
-source_group("source\\glm\\gtx" FILES ${GLM_GTX_SRCS})
+#source_group("source\\glm" FILES ${GLM_SRCS})
+#source_group("source\\glm\\detail" FILES ${GLM_DETAIL_SRCS})
+#source_group("source\\glm\\gtc" FILES ${GLM_GTC_SRCS})
+#source_group("source\\glm\\gtx" FILES ${GLM_GTX_SRCS})
 source_group("source\\player" FILES ${PLAYER_SRCS})
 source_group("source\\blocks" FILES ${BLOCKS_SRCS})
 #source_group("source\\lua" FILES ${LUA_SRCS})
@@ -101,10 +101,10 @@ add_executable(Vox
                ${PARTICLES_SRCS}
                ${RENDERER_SRCS}
                ${GUI_SRCS}
-               ${GLM_SRCS}
-               ${GLM_DETAIL_SRCS}
-               ${GLM_GTC_SRCS}
-               ${GLM_GTX_SRCS}
+#               ${GLM_SRCS}
+#               ${GLM_DETAIL_SRCS}
+#               ${GLM_GTC_SRCS}
+#               ${GLM_GTX_SRCS}
                ${PLAYER_SRCS}
                ${BLOCKS_SRCS}
 #               ${LUA_SRCS}

@@ -11,7 +11,8 @@
 
 #include "VoxGame.h"
 
-#include <glm/detail/func_geometric.hpp>
+//#include <glm/detail/func_geometric.inl>
+#include <glm/common.hpp>
 
 
 // Rendering

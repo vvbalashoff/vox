@@ -16,7 +16,8 @@
 #include "../utils/Interpolator.h"
 #include "../utils/Random.h"
 
-#include <glm/detail/func_geometric.hpp>
+//#include <glm/detail/func_geometric.inl>
+#include <glm/common.hpp>
 
 #include <fstream>
 #include <ostream>
