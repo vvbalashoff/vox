@@ -21,5 +21,8 @@ if(NOT SDLMIXER_FOUND)
 endif(NOT SDLMIXER_FOUND)
 include_directories(${SDL_MIXER_INCLUDE_DIR})
 
+include_directories(external/libnoise/include)
+include_directories(external/libnoise/examples)
 
+add_subdirectory(external)
 add_subdirectory(src)
