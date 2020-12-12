@@ -70,8 +70,8 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 
 	// Go through the obj file and count the number of vertices and faces
 	while( !feof(pFile) ) {
-		fgets(buffer, sizeof(buffer), pFile);
-
+		if (fgets(buffer, sizeof(buffer), pFile) == NULL)
+			return -1;
 		if(buffer[0] == 'v' && buffer[1] == ' ') {
 			m_numVertices++;
 		}
@@ -115,24 +115,30 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 
 	while( !feof(pFile) ) {
 		// Read in the charater of the line
-		fscanf(pFile, "%c", &tempChar);
+		if (fscanf(pFile, "%c", &tempChar) == EOF)
+			return -1;
 
 		// If it is a v then we are reading either a vertex point, texture coordinate or a vertex normal
 		if(tempChar == 'v') {
-			fscanf(pFile, "%c", &tempChar);
+			if (fscanf(pFile, "%c", &tempChar) == EOF)
+				return -1;
 
 			if(tempChar == ' ') {
 				// Vertex point
 				// Read in the x, y, z values of this vertex point
-				fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.x);
-				fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.y);
-				fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.z);
+				if (fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.x) == EOF)
+					return -1;
+				if (fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.y) == EOF)
+					return -1;
+				if (fscanf(pFile, "%f", &m_pVertices[vertexIndex].position.z) == EOF)
+					return -1;
 
 				// Set all the vertices to initially not be assigned to a mass
 				m_pVertices[vertexIndex].massID = -1;
 
 				// Read in the newline
-				fscanf(pFile, "%c", &tempChar);
+				if (fscanf(pFile, "%c", &tempChar) == EOF)
+					return -1;
 
 				// Increment the index
 				vertexIndex++;
@@ -140,11 +146,14 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 			else if(tempChar == 't') {
 				// Texture coordinate
 				// Read in the u, v, values of this texture coordinate
-				fscanf(pFile, "%f", &m_pTextureCoordinates[textureCoordinateIndex].u);
-				fscanf(pFile, "%f", &m_pTextureCoordinates[textureCoordinateIndex].v);
+				if (fscanf(pFile, "%f", &m_pTextureCoordinates[textureCoordinateIndex].u) == EOF)
+					return -1;
+				if (fscanf(pFile, "%f", &m_pTextureCoordinates[textureCoordinateIndex].v) == EOF)
+					return -1;
 
 				// Read in the newline
-				fscanf(pFile, "%c", &tempChar);
+				if (fscanf(pFile, "%c", &tempChar) == EOF)
+					return -1;
 
 				// Increment the index
 				textureCoordinateIndex++;
@@ -152,12 +161,16 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 			else if(tempChar == 'n') {
 				// Vertex normal
 				// Read in the x, y, z values of this vertex normal
-				fscanf(pFile, "%f", &m_pNormals[normalIndex].x);
-				fscanf(pFile, "%f", &m_pNormals[normalIndex].y);
-				fscanf(pFile, "%f", &m_pNormals[normalIndex].z);
+				if (fscanf(pFile, "%f", &m_pNormals[normalIndex].x) == EOF)
+					return -1;
+				if (fscanf(pFile, "%f", &m_pNormals[normalIndex].y) == EOF)
+					return -1;
+				if (fscanf(pFile, "%f", &m_pNormals[normalIndex].z) == EOF)
+					return -1;
 
 				// Read in the newline
-				fscanf(pFile, "%c", &tempChar);
+				if (fscanf(pFile, "%c", &tempChar) == EOF)
+					return -1;
 
 				// Increment the index
 				normalIndex++;
@@ -165,11 +178,13 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 		}
 		else if(tempChar == 'f') {
 			// If we read in a f check that the next char is a space
-			fscanf(pFile, "%c", &tempChar);
+			if (fscanf(pFile, "%c", &tempChar) == EOF)
+				return -1;
 
 			if(tempChar == ' ') {
 				// Read in the rest of the line
-				fgets(buffer, sizeof(buffer), pFile);
+				if (fgets(buffer, sizeof(buffer), pFile) == NULL)
+					return -1;
 
 				// Copy to a temp buffer so we can mess with it.
 				buffer[strlen(buffer)] = '\0';
@@ -350,7 +365,8 @@ bool OBJModel::Load(const char *modelFileName, const char *textureFileName)
 		else {
 			// Read the rest of the line
 			if(tempChar != '\n')
-				fgets(buffer, sizeof(buffer), pFile);
+				if (fgets(buffer, sizeof(buffer), pFile) == NULL)
+					return -1;
 		}
 
 		memset(buffer, '0', sizeof (buffer));
