@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/modules)
 
@@ -24,6 +24,7 @@ include_directories(${SDL_MIXER_INCLUDE_DIR})
 #find_package(Lua REQUIRED)
 
 include_directories(external/glm)
+include_directories(external/glfw/include/GLFW)
 include_directories(external/libnoise/include)
 include_directories(external/libnoise/examples)
 include_directories(external/lua)

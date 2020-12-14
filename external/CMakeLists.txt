@@ -3,5 +3,6 @@ option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static on
 option(LIBNOISE_BUILD_SHARED_LIBS "" ${BUILD_SHARED_LIBS})
 
 add_subdirectory(glm)
+add_subdirectory(glfw)
 add_subdirectory(libnoise)
 #add_subdirectory(lua)

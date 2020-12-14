@@ -7,3 +7,6 @@
 [submodule "external/lua"]
 	path = external/lua
 	url = https://github.com/lua/lua.git
+[submodule "external/glfw"]
+	path = external/glfw
+	url = https://github.com/glfw/glfw.git

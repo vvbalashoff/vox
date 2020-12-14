@@ -130,7 +130,7 @@ add_executable(Vox
                ${SOUNDMANAGER_SRCS})
 
 include_directories(".")
-include_directories("glfw\\include")
+#include_directories("glfw\\include")
 include_directories("glew\\include")
 include_directories("freetype\\include")
 #include_directories("lua")
@@ -140,7 +140,7 @@ include_directories("selene")
 #target_link_libraries(Vox "fmod")
 target_link_libraries(Vox "GL")
 target_link_libraries(Vox "GLU")
-target_link_libraries(Vox "glfw")
+#target_link_libraries(Vox "glfw")
 target_link_libraries(Vox "freetype")
 target_link_libraries(Vox "X11")
 target_link_libraries(Vox "Xrandr")
@@ -154,6 +154,8 @@ target_link_libraries(Vox ${SDL2_LIBRARY} ${SDL_MIXER_LIBRARY})
 # external libs
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/external/libnoise)
 target_link_libraries(Vox libnoise)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/external/glfw)
+target_link_libraries(Vox glfw)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
