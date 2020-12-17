@@ -34,7 +34,7 @@ add_subdirectory(blocks)
 add_subdirectory(selene)
 add_subdirectory(frontend)
 add_subdirectory(ini)
-add_subdirectory(simplex)
+#add_subdirectory(simplex)
 #add_subdirectory(tinythread)
 add_subdirectory(Skybox)
 add_subdirectory(scenery)
@@ -73,7 +73,7 @@ source_group("source\\selene\\selene" FILES ${SELENE_SRCS})
 source_group("source\\frontend" FILES ${FRONTEND_SRCS})
 source_group("source\\frontend\\Pages" FILES ${FRONTEND_PAGES})
 source_group("source\\ini" FILES ${INI_SRCS})
-source_group("source\\simplex" FILES ${SIMPLEX_SRCS})
+#source_group("source\\simplex" FILES ${SIMPLEX_SRCS})
 #source_group("source\\tinythread" FILES ${TINYTHREAD_SRCS})
 source_group("source\\Skybox" FILES ${SKYBOX_SRCS})
 source_group("source\\scenery" FILES ${SCENERY_SRCS})
@@ -113,7 +113,7 @@ add_executable(Vox
                ${FRONTEND_SRCS}
                ${FRONTEND_PAGES}
                ${INI_SRCS}
-               ${SIMPLEX_SRCS}
+#               ${SIMPLEX_SRCS}
 #               ${TINYTHREAD_SRCS}
                ${SKYBOX_SRCS}
                ${SCENERY_SRCS}
@@ -136,7 +136,7 @@ include_directories("freetype\\include")
 #include_directories("lua")
 include_directories("selene")
 
-# vvb
+# vvb external
 #target_link_libraries(Vox "fmod")
 target_link_libraries(Vox "GL")
 target_link_libraries(Vox "GLU")
@@ -156,6 +156,7 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/external/libnoise)
 target_link_libraries(Vox libnoise)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/external/glfw)
 target_link_libraries(Vox glfw)
+target_link_libraries(Vox simplex)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 

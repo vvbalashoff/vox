@@ -19,7 +19,7 @@
 #include "../scenery/SceneryManager.h"
 #include "../models/QubicleBinary.h"
 #include "../utils/Random.h"
-#include "../simplex/simplexnoise.h"
+#include "../external/simplex/simplexnoise.h"
 #include "../VoxSettings.h"
 #include "../VoxGame.h"
 #include "../Items/ItemManager.h"
